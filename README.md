@@ -5,18 +5,23 @@
 ## User Stories
 
 ```
-As a time-pressed user
+As a user
 So that I can quickly go to web sites I regularly visit
 I would like to see a list of bookmarks
 
-As a time-pressed user
+As a user
 So that I can save a website
 I would like to add the site's address and title to bookmark manager
+
+As a user
+So I can store bookmark data for later retrieval
+I want to add a bookmark to Bookmark Manager
 ```
 
 ## Domain Model
 
-![Bookmark Manager domain model](https://user-images.githubusercontent.com/23095774/59607355-1edd5400-910b-11e9-8c46-d69e375b14e0.png)
+![Bookmark Manager domain model](https://user-images.githubusercontent.com/23095774/59843377-5d178500-9350-11e9-8ccd-43144883a755.png)
+
 
 - When the user visits the '/bookmarks' path, their browser sends a request to a controller we built.
 - When the controller gets the request, it asks the Bookmark class to give it all the bookmarks, i.e. the controller asks for Bookmark.all.
@@ -37,13 +42,15 @@ bundle
 
 ### To set up the database
 
-Connect to `psql` and create the `bookmark_manager` database:
+Connect to `psql` and create the `bookmark_manager` and `bookmark_manager_test` databases:
 
 ```
 CREATE DATABASE bookmark_manager;
+CREATE DATABASE bookmark_manager_test;
 ```
 
-To set up the appropriate tables, connect to the database in `psql` and run the SQL scripts in the `db/migrations` folder in the given order.
+To set up the appropriate tables, connect to each database in `psql` and run the SQL scripts in the `db/migrations` folder in the given order.
+
 
 ### To run the Bookmark Manager app:
 

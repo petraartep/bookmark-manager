@@ -16,19 +16,20 @@
 
 
 ENV['ENVIRONMENT'] = 'test'
-ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
-require_relative './setup_test_database'
+
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require_relative './setup_test_database'
+
 
 Capybara.app = BookmarkManager
 
 RSpec.configure do |config|
 
-    # This will run the bespoke script to empty our test database before each
+  # This will run the bespoke script to empty our test database before each
   # set of tests are run
   config.before(:each) do
     setup_test_database
