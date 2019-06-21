@@ -17,7 +17,6 @@ describe Bookmark do
       expect(bookmarks.first.id).to eq bookmark.id
       expect(bookmarks.first.title).to eq "Makers Academy"
       expect(bookmarks.first.url).to eq "http://www.makersacademy.com"
-
     end
   end
 
