@@ -1,12 +1,15 @@
 <ul>
   <% @bookmarks.each do |bookmark| %>
-    <li id="bookmark-<%= bookmark.id %>">
+    <li id="bookmark" <%= bookmark.id %>">
       <a href="<%= bookmark.url %>" target="_blank">
         <%= bookmark.title %>
       </a>
       <form action="/bookmarks/<%= bookmark.id %>" method="post">
         <input type='hidden' name='_method' value='DELETE'/>
         <input type="submit" value="Delete" />
+      </form>
+      <form action="/bookmarks/<%= bookmark.id %>/edit" method="get">
+        <input type="submit" value="Edit" />
       </form>
     </li>
   <% end %>
