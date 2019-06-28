@@ -13,7 +13,3 @@ class DatabaseConnection
     @connection.exec(sql)
   end
 end
-
-# We're using a class instance variable to store the connection.
-# We can do this because our DatabaseConnection is never going to be instantiated. 
-# It's a 'Singleton' object: there's only one DatabaseConnection in the application.
